@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luciana Galdino — Nutricionista Clínica · GLP-1 e Pós-Bariátrico</title>
+<meta name="description" content="Nutricionista especializada em suporte clínico ao uso de GLP-1/GIP e endocrinologia nutricional no pós-bariátrico tardio. Metabolismo, saúde intestinal e resultado real.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #134686;
+    --azul-escuro: #0d3060;
+    --vermelho: #ed3f27;
+    --dourado: #C8922A;
+    --amarelo: #feb21a;
+    --verde: #2E6B5E;
+    --creme: #fafaf8;
+    --creme2: #f2f0ec;
+    --texto: #1a1a1a;
+    --cinza: #6b6b6b;
+    --borda: #e0ddd8;
+    --branco: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--creme); color: var(--texto); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(19,70,134,0.97); backdrop-filter: blur(8px); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: white; letter-spacing: 0.5px; text-decoration: none; }
+  .nav-logo span { color: var(--amarelo); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: white; }
+  .nav-cta { background: var(--dourado) !important; color: white !important; padding: 9px 20px; border-radius: 4px; font-weight: 500 !important; }
+  .nav-cta:hover { background: #b07d20 !important; }
+
+  /* HERO */
+  .hero { background: var(--azul); padding: 140px 40px 130px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(200,146,42,0.12) 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 80px; background: var(--creme); clip-path: ellipse(55% 100% at 50% 100%); }
+  .hero-eyebrow { display: inline-block; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--amarelo); border: 1px solid rgba(254,178,26,0.45); padding: 6px 18px; border-radius: 20px; margin-bottom: 32px; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 58px); font-weight: 300; color: white; line-height: 1.15; max-width: 760px; margin: 0 auto 28px; }
+  .hero h1 em { font-style: italic; color: var(--amarelo); }
+  .hero-sub { font-size: 16px; color: rgba(255,255,255,0.78); max-width: 580px; margin: 0 auto 44px; line-height: 1.85; }
+  .hero-cta { display: inline-block; background: var(--dourado); color: white; padding: 16px 40px; border-radius: 4px; font-size: 14px; font-weight: 500; letter-spacing: 1px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+  .hero-cta:hover { background: #b07d20; transform: translateY(-1px); }
+  .hero-crn { margin-top: 28px; font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* ESTRUTURA */
+  section { padding: 96px 40px; }
+  .container { max-width: 1040px; margin: 0 auto; }
+  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 300; color: var(--azul); line-height: 1.2; margin-bottom: 20px; }
+  .section-title em { font-style: italic; }
+  .section-text { font-size: 16px; color: var(--cinza); line-height: 1.9; max-width: 600px; }
+  .linha-dourada { width: 48px; height: 1px; background: var(--dourado); margin: 24px 0; opacity: 0.5; }
+
+  /* ALERTA CLÍNICO — faixa após hero */
+  .alerta-clinico { background: var(--creme2); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); padding: 40px; text-align: center; }
+  .alerta-clinico p { font-family: 'Cormorant Garamond', serif; font-size: clamp(17px, 2.2vw, 22px); font-weight: 300; color: var(--azul); max-width: 780px; margin: 0 auto; line-height: 1.6; }
+  .alerta-clinico p em { font-style: italic; color: var(--dourado); }
+
+  /* DORES — o que leva ao GLP-1 além do peso */
+  .dores { background: var(--branco); border-bottom: 1px solid var(--borda); }
+  .dores-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+  .dor-card { border: 1px solid var(--borda); border-radius: 8px; padding: 28px 24px; background: var(--creme); }
+  .dor-card .dor-icon { font-size: 22px; margin-bottom: 14px; }
+  .dor-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--azul); margin-bottom: 10px; }
+  .dor-card p { font-size: 13px; color: var(--cinza); line-height: 1.75; }
+
+  /* BENEFÍCIOS GLP-1 MULTISSISTÊMICO */
+  .beneficios { background: var(--azul); padding: 96px 40px; position: relative; overflow: hidden; }
+  .beneficios::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(200,146,42,0.08) 0%, transparent 70%); }
+  .beneficios .section-label { color: var(--amarelo); opacity: 0.9; }
+  .beneficios .section-title { color: white; }
+  .beneficios .section-text { color: rgba(255,255,255,0.65); max-width: 580px; }
+  .beneficios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 52px; }
+  .beneficio-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 24px 22px; }
+  .beneficio-sistema { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--amarelo); margin-bottom: 10px; opacity: 0.95; }
+  .beneficio-item h4 { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 400; color: white; margin-bottom: 10px; line-height: 1.3; }
+  .beneficio-item ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .beneficio-item ul li { font-size: 12px; color: rgba(255,255,255,0.58); line-height: 1.5; padding-left: 12px; position: relative; }
+  .beneficio-item ul li::before { content: '—'; position: absolute; left: 0; color: var(--amarelo); opacity: 0.6; }
+  .beneficios-nota { margin-top: 36px; padding: 20px 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(254,178,26,0.2); border-radius: 6px; font-size: 12px; color: rgba(255,255,255,0.4); font-style: italic; text-align: center; }
+
+  /* CONEXÃO: GLP-1 + BARIÁTRICA */
+  .conexao { background: var(--creme2); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+  .conexao-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .conexao-visual { background: var(--azul); border-radius: 8px; padding: 44px 36px; color: white; }
+  .conexao-visual .titulo-visual { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; margin-bottom: 28px; line-height: 1.3; }
+  .conexao-visual .titulo-visual em { font-style: italic; color: var(--amarelo); }
+  .conexao-pontos { display: flex; flex-direction: column; gap: 16px; }
+  .conexao-ponto { display: flex; align-items: flex-start; gap: 14px; }
+  .conexao-ponto .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amarelo); margin-top: 8px; flex-shrink: 0; }
+  .conexao-ponto p { font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.65; }
+  .conexao-texto .pilares { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+  .pilar { display: flex; align-items: flex-start; gap: 14px; }
+  .pilar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--dourado); margin-top: 8px; flex-shrink: 0; }
+  .pilar-texto { font-size: 15px; color: var(--texto); line-height: 1.6; }
+
+  /* SOBRE */
+  .sobre { background: var(--branco); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sobre-card { background: var(--azul); border-radius: 8px; padding: 48px 40px; color: white; text-align: center; }
+  .sobre-card .inicial { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-style: italic; color: var(--amarelo); line-height: 1; margin-bottom: 16px; }
+  .sobre-card .nome { font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+  .sobre-card .cargo { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .sobre-card .divisor { width: 40px; height: 1px; background: var(--amarelo); margin: 20px auto; opacity: 0.6; }
+  .sobre-card .crn { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 1.5px; }
+
+  /* PARA QUEM */
+  .para-quem { background: var(--creme2); }
+  .para-quem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
+  .perfil-card { background: var(--branco); border: 1px solid var(--borda); border-radius: 8px; padding: 32px 28px; }
+  .perfil-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(19,70,134,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 18px; }
+  .perfil-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--azul); margin-bottom: 12px; }
+  .perfil-card p { font-size: 14px; color: var(--cinza); line-height: 1.75; }
+
+  /* SERVIÇOS */
+  .servicos { background: var(--branco); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+  .servicos-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 56px; }
+  .servico-card { border: 1px solid var(--borda); border-radius: 8px; overflow: hidden; margin-bottom: 20px; transition: box-shadow 0.2s; }
+  .servico-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+  .servico-card.destaque { border-color: var(--azul); position: relative; }
+  .badge-destaque { position: absolute; top: -1px; right: 28px; background: var(--azul); color: white; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 0 0 6px 6px; }
+  .servico-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 28px 32px 20px; border-bottom: 1px solid var(--borda); background: var(--creme); }
+  .servico-nome { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--azul); margin-bottom: 4px; }
+  .servico-formato { font-size: 12px; color: var(--cinza); letter-spacing: 0.5px; }
+  .servico-preco { text-align: right; flex-shrink: 0; }
+  .servico-valor { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--azul); }
+  .servico-duracao { font-size: 11px; color: var(--cinza); letter-spacing: 0.5px; }
+  .servico-body { padding: 24px 32px 28px; }
+  .servico-desc { font-size: 14px; color: var(--cinza); line-height: 1.75; margin-bottom: 20px; }
+  .servico-inclui { display: flex; flex-direction: column; gap: 8px; }
+  .servico-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--texto); }
+  .servico-check { color: var(--verde); font-size: 14px; margin-top: 1px; flex-shrink: 0; }
+  .servicos-cta { text-align: center; margin-top: 48px; padding: 40px; background: var(--creme2); border-radius: 8px; border: 1px solid var(--borda); }
+  .servicos-cta p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--azul); margin-bottom: 24px; line-height: 1.4; }
+
+  /* MÉTODO */
+  .metodo { background: var(--creme2); border-top: 1px solid var(--borda); }
+  .metodo-fases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 52px; }
+  .fase { background: var(--branco); border: 1px solid var(--borda); border-radius: 8px; padding: 32px 28px; }
+  .fase-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-style: italic; color: var(--azul); opacity: 0.18; line-height: 1; margin-bottom: 16px; }
+  .fase h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--azul); margin-bottom: 12px; }
+  .fase p { font-size: 13px; color: var(--cinza); line-height: 1.75; }
+
+  /* CTA FINAL */
+  .aplicacao-cta { background: var(--azul); padding: 96px 40px; text-align: center; position: relative; overflow: hidden; }
+  .aplicacao-cta::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(200,146,42,0.1) 0%, transparent 70%); }
+  .aplicacao-cta .section-label { color: var(--amarelo); opacity: 0.9; }
+  .aplicacao-cta .section-title { color: white; max-width: 640px; margin: 0 auto 20px; }
+  .aplicacao-cta .section-text { color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 40px; }
+  .btn-primario { display: inline-block; background: var(--branco); color: var(--azul); padding: 16px 44px; border-radius: 4px; font-size: 14px; font-weight: 500; letter-spacing: 1px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+  .btn-primario:hover { background: var(--creme2); transform: translateY(-1px); }
+  .btn-dourado { display: inline-block; background: var(--dourado); color: white; padding: 16px 44px; border-radius: 4px; font-size: 14px; font-weight: 500; letter-spacing: 1px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+  .btn-dourado:hover { background: #b07d20; transform: translateY(-1px); }
+  .aplicacao-obs { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+
+  /* FOOTER */
+  footer { background: var(--azul-escuro); padding: 48px 40px; text-align: center; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: white; margin-bottom: 16px; }
+  .footer-logo span { color: var(--amarelo); }
+  .footer-info { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; }
+  .footer-social { display: flex; gap: 24px; justify-content: center; margin-bottom: 32px; }
+  .footer-social a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 0.5px; transition: color 0.2s; }
+  .footer-social a:hover { color: white; }
+  .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 72px 20px; }
+    .hero { padding: 120px 24px 100px; }
+    .dores-grid, .beneficios-grid, .para-quem-grid, .metodo-fases { grid-template-columns: 1fr; }
+    .conexao-grid, .sobre-grid, .servicos-intro { grid-template-columns: 1fr; gap: 36px; }
+    .servico-header { flex-direction: column; gap: 12px; }
+    .servico-preco { text-align: left; }
+    .alerta-clinico { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">Luciana <span>Galdino</span></a>
+  <ul class="nav-links">
+    <li><a href="#glp1">GLP-1</a></li>
+    <li><a href="#para-quem">Para quem</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="aplicacao.html" class="nav-cta">Quero me inscrever</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Nutricionista Clínica · GLP-1 e Pós-Bariátrico</div>
+  <h1>GLP-1 não é só emagrecimento.<br><em>É o seu metabolismo</em><br>sendo tratado de verdade.</h1>
+  <p class="hero-sub">
+    Suporte nutricional clínico para quem usa ou vai usar análogos de GLP-1 — com visão integrada de metabolismo, saúde intestinal e histórico bariátrico.
+  </p>
+  <a href="aplicacao.html" class="hero-cta">Quero conhecer o seu caso</a>
+  <p class="hero-crn">Luciana Galdino · CRN-1 5150 · Atendimento 100% online</p>
+</section>
+
+<!-- ALERTA CLÍNICO -->
+<div class="alerta-clinico">
+  <p>A maioria das pessoas que usa GLP-1 não recebe suporte nutricional adequado para o que a medicação realmente faz no corpo. <em>Esse é o espaço onde trabalho.</em></p>
+</div>
+
+<!-- DORES — por que GLP-1 além do peso -->
+<section class="dores" id="glp1">
+  <div class="container">
+    <div class="section-label">Por que GLP-1</div>
+    <h2 class="section-title">As razões clínicas para usar GLP-1<br><em>que ninguém está explicando</em></h2>
+    <p class="section-text">A caneta não é uma ferramenta de emagrecimento. É um análogo de um hormônio que age em múltiplos sistemas — e quem usa sem suporte nutricional integrado aproveita uma fração do potencial real.</p>
+    <div class="dores-grid">
+      <div class="dor-card">
+        <div class="dor-icon">⚡</div>
+        <h3>Resistência insulínica que não cede</h3>
+        <p>Glicemia desregulada, cansaço crônico, fome fora de hora, acúmulo abdominal — mesmo com dieta. O GLP-1 age diretamente no controle glicêmico dependente de glicose. Sem suporte nutricional, o efeito é parcial.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">🔥</div>
+        <h3>Inflamação crônica e peso que não sai</h3>
+        <p>Inflamação de baixo grau sabota o metabolismo e sustenta o reganho de peso — especialmente no pós-bariátrico tardio. GLP-1 tem ação anti-inflamatória sistêmica que a nutrição precisa suportar.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">🦴</div>
+        <h3>Perda de massa muscular e óssea</h3>
+        <p>Quem usa GLP-1 sem protocolo nutricional adequado perde músculo junto com gordura — e compromete a densidade óssea. É um dos efeitos mais subestimados do uso sem acompanhamento.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">🧠</div>
+        <h3>Função cognitiva e saúde cerebral</h3>
+        <p>GLP-1 reduz risco de AVC, tem ação anti-inflamatória cerebral e melhora memória e cognição. Esses efeitos dependem de um estado nutricional que a maioria das pessoas não consegue sozinha.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">❤️</div>
+        <h3>Risco cardiovascular elevado</h3>
+        <p>Hipertensão, risco aterosclerótico, arritmias — especialmente prevalentes em quem tem histórico bariátrico ou síndrome metabólica. GLP-1 tem efeito cardioprotetor que nutrição integrada potencializa.</p>
+      </div>
+      <div class="dor-card">
+        <div class="dor-icon">🌿</div>
+        <h3>Intestino comprometido desde a cirurgia</h3>
+        <p>GLP-1 é produzido nas células L do intestino e age no eixo intestino-cérebro. No pós-bariátrico, a microbiota alterada e a permeabilidade intestinal reduzem a resposta à medicação — e precisam ser tratadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS MULTISSISTÊMICOS -->
+<section class="beneficios">
+  <div class="container">
+    <div class="section-label">Ação do GLP-1 no organismo</div>
+    <h2 class="section-title">GLP-1 age em<br><em>sete sistemas ao mesmo tempo.</em></h2>
+    <p class="section-text">Por isso o suporte nutricional não pode ser genérico. Cada sistema exige uma abordagem específica — e ignorar qualquer um deles compromete o resultado clínico.</p>
+    <div class="beneficios-grid">
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema metabólico</div>
+        <h4>Controle glicêmico e composição corporal</h4>
+        <ul>
+          <li>Controle glicêmico dependente da glicose</li>
+          <li>Redução de IMC e gordura visceral</li>
+          <li>Efeitos lipolíticos</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema cardiovascular</div>
+        <h4>Proteção cardíaca e vascular</h4>
+        <ul>
+          <li>Efeito anti-hipertensivo</li>
+          <li>Redução de risco aterosclerótico</li>
+          <li>Redução de frequência de arritmias</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema nervoso central</div>
+        <h4>Cognição e neuroproteção</h4>
+        <ul>
+          <li>Redução de risco de AVC</li>
+          <li>Ação anti-inflamatória cerebral</li>
+          <li>Melhora de memória e função cognitiva</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema gastrointestinal</div>
+        <h4>Motilidade e eixo intestino-cérebro</h4>
+        <ul>
+          <li>Inibição do esvaziamento gástrico</li>
+          <li>Regulação do eixo intestino-cérebro</li>
+          <li>Impacto direto na microbiota</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema musculoesquelético</div>
+        <h4>Força, músculo e osso</h4>
+        <ul>
+          <li>Melhora da força muscular</li>
+          <li>Qualidade óssea preservada</li>
+          <li>Prevenção de fraturas</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema reprodutor</div>
+        <h4>Hormônios e fertilidade</h4>
+        <ul>
+          <li>Regulação do ciclo menstrual</li>
+          <li>Tratamento adjuvante na SOP</li>
+          <li>Melhora de marcadores em pré-eclâmpsia</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema ocular</div>
+        <h4>Proteção da visão</h4>
+        <ul>
+          <li>Redução de risco de glaucoma</li>
+          <li>Redução de risco de retinopatia diabética</li>
+        </ul>
+      </div>
+      <div class="beneficio-item">
+        <div class="beneficio-sistema">Sistema androgênico</div>
+        <h4>Saúde masculina</h4>
+        <ul>
+          <li>Tratamento da infertilidade masculina</li>
+          <li>Melhora da motilidade de espermatozoides</li>
+          <li>Modulação do nível de testosterona</li>
+        </ul>
+      </div>
+      <div class="beneficio-item" style="background: rgba(254,178,26,0.08); border-color: rgba(254,178,26,0.3);">
+        <div class="beneficio-sistema" style="color: var(--amarelo);">Meu trabalho</div>
+        <h4 style="color: var(--amarelo);">Suporte nutricional para todos esses sistemas</h4>
+        <ul>
+          <li>Protocolo individualizado por perfil clínico</li>
+          <li>Integração entre GLP-1 e histórico bariátrico</li>
+          <li>Abordagem intestinal como eixo central</li>
+        </ul>
+      </div>
+    </div>
+    <div class="beneficios-nota">
+      Referência: HAMMAD, Bisma Fatima et al. Exploring the multifaceted roles of GLP-1 receptor agonists: a comprehensive review. <em>Frontiers in Clinical Diabetes and Healthcare</em>, v. 6, p. 1590530, 2025.
+    </div>
+  </div>
+</section>
+
+<!-- CONEXÃO GLP-1 + BARIÁTRICA -->
+<section class="conexao">
+  <div class="container">
+    <div class="conexao-grid">
+      <div class="conexao-visual">
+        <div class="titulo-visual">Por que quem fez bariátrica<br><em>precisa de suporte ainda maior</em></div>
+        <div class="conexao-pontos">
+          <div class="conexao-ponto"><div class="dot"></div><p>O intestino pós-bariátrico tem anatomia alterada — o GLP-1 endógeno já é produzido de forma diferente. Usar análogo exógeno sem considerar isso é ignorar metade do mecanismo.</p></div>
+          <div class="conexao-ponto"><div class="dot"></div><p>A microbiota comprometida desde a cirurgia reduz a resposta ao GLP-1 e precisa ser tratada como parte do protocolo — não como queixa secundária.</p></div>
+          <div class="conexao-ponto"><div class="dot"></div><p>O reganho de peso no pós-tardio tem causa metabólica, hormonal e intestinal. A caneta resolve parte da equação. A nutrição integrada resolve o resto.</p></div>
+          <div class="conexao-ponto"><div class="dot"></div><p>Deficiências nutricionais acumuladas após anos de bariátrica interagem diretamente com a eficácia do GLP-1 — e raramente são rastreadas com a profundidade necessária.</p></div>
+        </div>
+      </div>
+      <div class="conexao-texto">
+        <div class="section-label">Minha visão clínica</div>
+        <h2 class="section-title">Endocrinologia nutricional<br><em>e saúde intestinal</em></h2>
+        <div class="linha-dourada"></div>
+        <p class="section-text">Trabalho na intersecção entre farmacologia do GLP-1, função intestinal e metabolismo — com atenção especial a quem tem histórico bariátrico. Não trato emagrecimento. Trato o que está impedindo o seu organismo de funcionar.</p>
+        <div class="pilares">
+          <div class="pilar"><div class="pilar-dot"></div><div class="pilar-texto">Suporte nutricional integrado ao uso de GLP-1/GIP</div></div>
+          <div class="pilar"><div class="pilar-dot"></div><div class="pilar-texto">Saúde intestinal como eixo metabólico central</div></div>
+          <div class="pilar"><div class="pilar-dot"></div><div class="pilar-texto">Endocrinologia nutricional aplicada ao pós-bariátrico tardio</div></div>
+          <div class="pilar"><div class="pilar-dot"></div><div class="pilar-texto">Atendimento 100% online — Luciana Galdino · CRN-1 5150</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="para-quem" id="para-quem">
+  <div class="container">
+    <div class="section-label">Para quem é</div>
+    <h2 class="section-title">Você está no lugar certo<br><em>se reconhece esse cenário</em></h2>
+    <div class="para-quem-grid">
+      <div class="perfil-card">
+        <div class="perfil-icon">◈</div>
+        <h3>Usa ou vai iniciar GLP-1</h3>
+        <p>Seu médico indicou a caneta. Você quer que ela funcione de verdade — sem perder massa muscular, sem sintomas gastrointestinais descontrolados, com um protocolo nutricional que faça sentido para o seu caso.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon">◎</div>
+        <h3>Pós-bariátrico tardio com reganho</h3>
+        <p>Fez a cirurgia, teve resultado — e agora está vendo o peso retornar. Pode ou não ter indicação de GLP-1. O que está claro é que o corpo mudou e precisa de um olhar clínico integrado, não de mais uma dieta.</p>
+      </div>
+      <div class="perfil-card">
+        <div class="perfil-icon">◇</div>
+        <h3>Metabolismo que não responde</h3>
+        <p>Resistência insulínica, disbiose, alterações hormonais, perimenopausa, síndrome metabólica. Usando GLP-1 ou considerando. Precisa de acompanhamento que veja essas peças juntas — não separadas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="servicos-intro">
+      <div>
+        <div class="section-label">Linha de serviços</div>
+        <h2 class="section-title">Como posso<br><em>te acompanhar</em></h2>
+      </div>
+      <div>
+        <p class="section-text">Cada serviço foi estruturado para um momento diferente. O acompanhamento indicado para o seu caso será definido após análise da sua aplicação — não existe uma resposta única para perfis tão distintos.</p>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-header">
+        <div><div class="servico-nome">Consulta Avulsa</div><div class="servico-formato">Videochamada · 60 min · Com entregável por escrito</div></div>
+        <div class="servico-preco"><div class="servico-duracao">Sessão única</div></div>
+      </div>
+      <div class="servico-body">
+        <p class="servico-desc">Avaliação clínica completa com foco no seu contexto — histórico bariátrico, uso de GLP-1, perfil metabólico e intestinal. Orientações personalizadas entregues por escrito em até 48h.</p>
+        <div class="servico-inclui">
+          <div class="servico-item"><span class="servico-check">✓</span><span>Anamnese prévia via formulário</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Avaliação metabólica, intestinal e nutricional integrada</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Orientações por escrito entregues em até 48h</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-header">
+        <div><div class="servico-nome">Consultoria Assíncrona Trimestral</div><div class="servico-formato">Via formulário · Sem videochamada · 3 meses</div></div>
+        <div class="servico-preco"><div class="servico-duracao">3 meses · pagamento antecipado</div></div>
+      </div>
+      <div class="servico-body">
+        <p class="servico-desc">Acompanhamento nutricional estruturado por 3 meses via formulário. Ideal para quem tem autonomia para seguir orientações e quer suporte clínico real com flexibilidade de agenda.</p>
+        <div class="servico-inclui">
+          <div class="servico-item"><span class="servico-check">✓</span><span>Plano nutricional individualizado com lógica clínica explicada</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Mensagem de voz com os pontos principais do protocolo</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>3 checkpoints mensais com devolutiva e ajustes</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Devolutiva final com orientações de continuidade</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="servico-card destaque">
+      <div class="badge-destaque">Mais completo</div>
+      <div class="servico-header">
+        <div><div class="servico-nome">Programa Nutricional Trimestral</div><div class="servico-formato">Videochamada + suporte estruturado · 3 meses</div></div>
+        <div class="servico-preco"><div class="servico-duracao">3 meses · pagamento antecipado</div></div>
+      </div>
+      <div class="servico-body">
+        <p class="servico-desc">Acompanhamento completo com consultas por videochamada e suporte entre sessões. Para quem quer resultado consistente com presença clínica real — especialmente nos primeiros meses de uso de GLP-1 ou no manejo do reganho pós-bariátrico.</p>
+        <div class="servico-inclui">
+          <div class="servico-item"><span class="servico-check">✓</span><span>Consulta inicial + 2 retornos por videochamada</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Plano nutricional individualizado</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Checkpoints mensais entre as consultas</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Ajustes contínuos conforme evolução clínica e resposta ao GLP-1</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Devolutiva final com plano de continuidade</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="servico-card">
+      <div class="servico-header">
+        <div><div class="servico-nome">Programa Nutricional Semestral</div><div class="servico-formato">Videochamada + suporte estruturado · 6 meses</div></div>
+        <div class="servico-preco"><div class="servico-duracao">6 meses · pagamento antecipado</div></div>
+      </div>
+      <div class="servico-body">
+        <p class="servico-desc">O tempo clinicamente necessário para mudanças metabólicas reais e sustentáveis — especialmente para quem está em uso contínuo de GLP-1, no pós-bariátrico tardio ou com quadro metabólico complexo.</p>
+        <div class="servico-inclui">
+          <div class="servico-item"><span class="servico-check">✓</span><span>Consulta inicial + retornos bimestrais por videochamada</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Plano nutricional individualizado e revisado conforme evolução</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Checkpoints mensais com devolutiva escrita</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Avaliação comparativa completa início × final</span></div>
+          <div class="servico-item"><span class="servico-check">✓</span><span>Plano de manutenção e autonomia ao encerrar</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="servicos-cta">
+      <p>Não sabe qual serviço faz sentido para o seu momento?<br>É para isso que existe a aplicação.</p>
+      <a href="aplicacao.html" class="btn-dourado">Quero me inscrever</a>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="metodo">
+  <div class="container">
+    <div class="section-label">Como trabalho</div>
+    <h2 class="section-title">Três fases clínicas.<br><em>Um processo real.</em></h2>
+    <p class="section-text">O acompanhamento não começa pelo plano alimentar. Começa pelo diagnóstico do que está acontecendo no seu corpo — metabolismo, intestino, resposta ao GLP-1 — e avança em fases com ajustes reais.</p>
+    <div class="metodo-fases">
+      <div class="fase">
+        <div class="fase-num">01</div>
+        <h3>Desbloqueio e Base</h3>
+        <p>Mapeamento clínico completo: histórico bariátrico, função intestinal, perfil metabólico, momento de uso do GLP-1. Plano nutricional individualizado com lógica clínica explicada.</p>
+      </div>
+      <div class="fase">
+        <div class="fase-num">02</div>
+        <h3>Modulação e Ajuste</h3>
+        <p>Checkpoints estruturados para avaliar evolução — resposta ao GLP-1, marcadores metabólicos, saúde intestinal. Ajustes finos no protocolo conforme a resposta clínica real.</p>
+      </div>
+      <div class="fase">
+        <div class="fase-num">03</div>
+        <h3>Consolidação</h3>
+        <p>Avaliação comparativa, devolutiva clínica completa e plano de continuidade. O objetivo é que você saia com autonomia metabólica — não dependência de reiniciar o processo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="aplicacao-cta">
+  <div class="container">
+    <div class="section-label">Próximo passo</div>
+    <h2 class="section-title">Comece por aqui.<br><em>Eu analiso o seu caso.</em></h2>
+    <p class="section-text">Preencha a aplicação com o seu histórico. Analiso cada resposta individualmente e entro em contato para indicar o melhor caminho para a sua situação.</p>
+    <a href="aplicacao.html" class="btn-primario">Quero me inscrever</a>
+    <p class="aplicacao-obs">Vagas limitadas · Atendimento 100% online · Sem WhatsApp exposto</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Luciana <span>Galdino</span></div>
+  <div class="footer-info">Nutricionista Clínica Especializada · CRN-1 5150</div>
+  <div class="footer-social">
+    <a href="https://instagram.com/nutri.lugaldino" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/@nutri.lugaldino" target="_blank">TikTok</a>
+    <a href="aplicacao.html">Aplicação</a>
+  </div>
+  <div class="footer-copy">© 2025 Luciana Galdino · Atendimento exclusivamente online</div>
+</footer>
+
+</body>
+</html>
