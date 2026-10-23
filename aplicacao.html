@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aplicação — Luciana Galdino Nutricionista</title>
-<meta name="description" content="Preencha sua aplicação para acompanhamento nutricional especializado em GLP-1 e pós-bariátrico.">
+<meta name="description" content="Preencha sua aplicação para acompanhamento nutricional especializado em pós-bariátrico tardio e saúde intestinal.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --azul: #134686;
     --azul-escuro: #0A1628;
-    --vermelho: #AD0217;
     --crimson: #9E0E18;
+    --vermelho: #AD0217;
     --bordo: #490811;
     --dourado: #CC9E4A;
     --amarelo: #ECC412;
@@ -31,15 +31,15 @@
   /* HEADER */
   .site-header { background: var(--azul-escuro); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; }
   .site-header .logo { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: white; letter-spacing: 0.5px; text-decoration: none; }
-  .site-header .logo span { color: var(--amarelo); }
+  .site-header .logo span { color: var(--dourado); }
   .site-header .voltar { font-size: 12px; color: rgba(255,255,255,0.55); text-decoration: none; letter-spacing: 1px; transition: color 0.2s; }
   .site-header .voltar:hover { color: white; }
 
   /* HERO */
   .hero { background: linear-gradient(155deg, #0a1628 0%, #1a0308 100%); padding: 64px 40px 110px; text-align: center; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(204,158,74,0.1) 0%, transparent 70%); pointer-events: none; }
+  .hero::before { content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(204,158,74,0.10) 0%, transparent 70%); pointer-events: none; }
   .hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 70px; background: var(--creme); clip-path: ellipse(55% 100% at 50% 100%); }
-  .hero-badge { display: inline-block; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--dourado); border: 1px solid rgba(204,158,74,0.4); padding: 6px 18px; border-radius: 20px; margin-bottom: 28px; }
+  .hero-badge { display: inline-block; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--dourado); border: 1px solid rgba(204,158,74,0.45); padding: 6px 18px; border-radius: 20px; margin-bottom: 28px; }
   .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 46px); font-weight: 300; color: white; line-height: 1.2; max-width: 660px; margin: 0 auto 20px; }
   .hero h1 em { font-style: italic; color: var(--dourado); }
   .hero p { font-size: 15px; color: rgba(255,255,255,0.72); max-width: 500px; margin: 0 auto; line-height: 1.85; }
@@ -58,7 +58,7 @@
   .page-dot.ativo { background: var(--dourado); width: 24px; border-radius: 4px; }
   .page-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--cinza); }
 
-  /* BLOCO DE PERGUNTA — agora contínuo */
+  /* BLOCO DE PERGUNTA */
   .pergunta {
     background: var(--branco);
     border: 1px solid var(--borda);
@@ -88,37 +88,37 @@
 
   /* VALIDAÇÃO */
   .pergunta.erro {
-    border-color: #ed3f27;
+    border-color: var(--crimson);
     background: #fffaf9;
   }
   .erro-msg {
     display: none;
-    color: #ed3f27;
+    color: var(--crimson);
     font-size: 12px;
     margin-top: 12px;
     letter-spacing: 0.3px;
   }
   .pergunta.erro .erro-msg { display: block; }
   .obrigatorio {
-    color: #ed3f27;
+    color: var(--crimson);
     font-size: 13px;
     margin-left: 4px;
   }
   .erro-geral {
     display: none;
     background: #fffaf9;
-    border: 1px solid #ed3f27;
+    border: 1px solid var(--crimson);
     border-radius: 8px;
     padding: 16px 20px;
     margin-bottom: 20px;
     font-size: 13px;
-    color: #ed3f27;
+    color: var(--crimson);
     text-align: center;
     line-height: 1.6;
   }
   .erro-geral.visivel { display: block; }
 
-  /* BOTÃO DE AVANÇO — rodapé da página 1 */
+  /* BOTÃO DE AVANÇO */
   .avanco-wrap {
     text-align: center;
     margin-top: 32px;
@@ -134,8 +134,8 @@
   /* PÁGINA 2 */
   .pagina2 { display: none; }
 
-  .pagina2-intro { background: var(--azul); border-radius: 8px; padding: 40px 36px; text-align: center; margin-bottom: 28px; color: white; }
-  .pagina2-intro .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--amarelo); margin-bottom: 14px; }
+  .pagina2-intro { background: var(--azul-escuro); border-radius: 8px; padding: 40px 36px; text-align: center; margin-bottom: 28px; color: white; }
+  .pagina2-intro .eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--dourado); margin-bottom: 14px; }
   .pagina2-intro h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; line-height: 1.3; margin-bottom: 14px; }
   .pagina2-intro h2 em { font-style: italic; color: var(--dourado); }
   .pagina2-intro p { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.8; }
@@ -144,11 +144,11 @@
   .como-funciona { background: var(--creme2); border: 1px solid var(--borda); border-radius: 8px; padding: 32px 36px; margin-bottom: 28px; }
   .como-funciona h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--azul); margin-bottom: 20px; }
 
-  /* CAIXA DE DIRECIONAMENTO — para quem chega indecisa */
+  /* CAIXA DE DIRECIONAMENTO */
   .direcionamento-box {
     background: var(--branco);
     border: 1px solid var(--borda);
-    border-left: 3px solid var(--amarelo);
+    border-left: 3px solid var(--dourado);
     border-radius: 8px;
     padding: 28px 32px;
     margin-bottom: 28px;
@@ -183,10 +183,14 @@
   .preco-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--azul); margin-bottom: 3px; }
   .preco-info .formato { font-size: 12px; color: var(--cinza); }
   .preco-valor-wrap { text-align: right; flex-shrink: 0; }
-  .preco-valor { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--azul); line-height: 1; }
+  /* Preço principal — DM Sans, grande */
+  .preco-valor { font-family: 'DM Sans', sans-serif; font-size: 26px; font-weight: 400; color: var(--azul); letter-spacing: -0.5px; line-height: 1.1; }
+  /* separador "ou" */
+  .preco-ou { font-family: 'DM Sans', sans-serif; font-size: 10px; color: var(--cinza); margin-top: 4px; letter-spacing: 0.5px; }
+  /* Pix — crimson */
+  .preco-pix { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 400; color: var(--crimson); margin-top: 2px; letter-spacing: 0.2px; }
+  /* sessão única */
   .preco-parcela { font-size: 11px; color: var(--cinza); margin-top: 3px; }
-  .preco-ou { font-size: 10px; color: var(--cinza); margin-top: 4px; letter-spacing: 0.3px; }
-  .preco-pix { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--crimson); margin-top: 2px; }
   .preco-inclui { display: flex; flex-direction: column; gap: 6px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--borda); }
   .preco-item { display: flex; align-items: flex-start; gap: 9px; font-size: 12px; color: var(--cinza); }
   .preco-check { color: var(--verde); font-size: 13px; flex-shrink: 0; margin-top: 1px; }
@@ -221,10 +225,10 @@
   .nao-inclui-box { margin-top: 18px; padding: 14px 16px; background: var(--creme2); border-radius: 6px; font-size: 12px; color: var(--cinza); line-height: 1.7; }
   .nao-inclui-box strong { color: var(--texto); font-weight: 500; }
 
-  /* CONDIÇÕES DE PAGAMENTO — DESTAQUE */
+  /* CONDIÇÕES DE PAGAMENTO */
   .condicoes-pagamento {
     background: var(--creme2);
-    border: 1px solid rgba(254,178,26,0.4);
+    border: 1px solid rgba(204,158,74,0.4);
     border-radius: 8px;
     padding: 26px 28px;
     margin-top: 24px;
@@ -232,7 +236,7 @@
   .condicoes-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
   .condicoes-icon {
     width: 32px; height: 32px; border-radius: 50%;
-    background: var(--amarelo); color: white;
+    background: var(--dourado); color: white;
     display: flex; align-items: center; justify-content: center;
     font-size: 15px; flex-shrink: 0;
   }
@@ -251,7 +255,7 @@
   .campo label { display: block; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--cinza); margin-bottom: 8px; }
 
   .btn-enviar { width: 100%; background: var(--dourado); color: white; border: none; padding: 18px 40px; border-radius: 4px; font-size: 15px; font-weight: 500; font-family: 'DM Sans', sans-serif; letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: 8px; }
-  .btn-enviar:hover { background: #b08930; transform: translateY(-1px); }
+  .btn-enviar:hover { background: #b07d20; transform: translateY(-1px); }
   .form-obs { text-align: center; font-size: 11px; color: var(--cinza); margin-top: 14px; line-height: 1.6; }
 
   /* VOLTAR para página 1 */
@@ -260,7 +264,7 @@
 
   /* CONFIRMAÇÃO */
   .confirmacao { display: none; text-align: center; padding: 80px 24px; }
-  .confirmacao-icon { width: 64px; height: 64px; background: rgba(46,107,94,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-size: 28px; }
+  .confirmacao-icon { width: 64px; height: 64px; background: rgba(37,106,62,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-size: 28px; }
   .confirmacao h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--azul); margin-bottom: 16px; line-height: 1.3; }
   .confirmacao p { font-size: 15px; color: var(--cinza); line-height: 1.85; max-width: 440px; margin: 0 auto 32px; }
   .confirmacao .voltar-site { display: inline-block; font-size: 13px; color: var(--azul); text-decoration: none; border-bottom: 1px solid rgba(19,70,134,0.3); padding-bottom: 2px; }
@@ -268,7 +272,7 @@
   /* FOOTER */
   footer { background: var(--azul-escuro); padding: 40px; text-align: center; }
   .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; color: white; margin-bottom: 12px; }
-  .footer-logo span { color: var(--amarelo); }
+  .footer-logo span { color: var(--dourado); }
   .footer-info { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 20px; }
   .footer-social { display: flex; gap: 24px; justify-content: center; margin-bottom: 20px; }
   .footer-social a { font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
@@ -302,7 +306,7 @@
 <div class="hero">
   <div class="hero-badge">Formulário de Aplicação</div>
   <h1>Antes de começar,<br>preciso <em>entender o seu caso.</em></h1>
-  <p>Não existe protocolo pronto para GLP-1 nem para pós-bariátrico. Preencha com sinceridade — analiso cada aplicação individualmente antes de qualquer contato.</p>
+  <p>No pós-bariátrico tardio, cada caso chega com um intestino diferente e um histórico diferente — o protocolo começa pelo seu, não por uma fórmula pronta. Preencha com sinceridade — analiso cada aplicação individualmente antes de qualquer contato.</p>
 </div>
 
 <!-- MAIN -->
@@ -481,7 +485,7 @@
       <div class="etapas">
         <div class="etapa">
           <div class="etapa-num">1</div>
-          <div class="etapa-texto"><strong>Você preenche a aplicação</strong> — analiso cada resposta individualmente, sem protocolo padrão.</div>
+          <div class="etapa-texto"><strong>Você preenche a aplicação</strong> — analiso cada resposta individualmente, com atenção ao histórico bariátrico e às queixas intestinais.</div>
         </div>
         <div class="etapa">
           <div class="etapa-num">2</div>
@@ -493,7 +497,7 @@
         </div>
         <div class="etapa">
           <div class="etapa-num">4</div>
-          <div class="etapa-texto"><strong>O protocolo é construído para o seu caso</strong> — histórico bariátrico, uso de GLP-1, perfil metabólico e intestinal integrados em um único plano.</div>
+          <div class="etapa-texto"><strong>O protocolo é construído para o seu caso</strong> — intestino, histórico bariátrico, perfil metabólico e deficiências nutricionais integrados em um único plano.</div>
         </div>
       </div>
     </div>
@@ -515,8 +519,8 @@
             <div class="preco-parcela">sessão única · à vista no Pix</div>
           </div>
         </div>
-        <p class="preco-desc">Consulta clínica individual por videochamada, com avaliação nutricional, metabólica e intestinal completa — considerando o histórico bariátrico e o momento atual do seu corpo. Orientações personalizadas entregues por escrito em até 24 horas.</p>
-        <div class="preco-indicacao">Indicada para quem quer uma avaliação clínica séria e individualizada sem se comprometer com um programa — ou para quem está no pós-bariátrico e precisa de orientação pontual e fundamentada sobre um aspecto específico da saúde.</div>
+        <p class="preco-desc">Uma sessão clínica individual dedicada ao seu momento no pós-bariátrico tardio. Investigamos juntas o que está acontecendo com o seu intestino, metabolismo e composição corporal desde a cirurgia — microbiota, deficiências acumuladas, reganho, sintomas funcionais. Você sai com uma avaliação real do seu quadro e orientações concretas por escrito.</p>
+        <div class="preco-indicacao">Para quem quer entender, com profundidade, o que está acontecendo no próprio corpo após a bariátrica — sem se comprometer com um programa ainda, ou para tirar uma dúvida clínica específica sobre saúde intestinal no pós-operatório.</div>
         <div class="preco-inclui">
           <div class="preco-item"><span class="preco-check">✓</span><span>Anamnese prévia via formulário</span></div>
           <div class="preco-item"><span class="preco-check">✓</span><span>Videochamada de até 60 minutos</span></div>
@@ -536,11 +540,12 @@
           </div>
           <div class="preco-valor-wrap">
             <div class="preco-valor">6x de R$ 182</div>
-            <div class="preco-pix">ou R$ 1.000 à vista no Pix</div>
+            <div class="preco-ou">ou</div>
+            <div class="preco-pix">R$ 1.000 à vista no Pix</div>
           </div>
         </div>
-        <p class="preco-desc">Acompanhamento nutricional estruturado por 3 meses, inteiramente à distância — via formulário, comunicação escrita e suporte por WhatsApp. Sem videochamada, sem agenda fixa. Com presença clínica real nos momentos que importam, incluindo o cuidado com a microbiota intestinal comprometida pela cirurgia e os ajustes necessários ao longo do processo.</p>
-        <div class="preco-indicacao">Para quem tem autonomia para seguir um plano com suporte assíncrono e quer acompanhamento sério com flexibilidade de rotina. Indicada para o pós-bariátrico tardio com quadro estável — reganho leve, disbiose, deficiências nutricionais ou ajuste metabólico gradual.</div>
+        <p class="preco-desc">Três meses de acompanhamento nutricional focado na saúde intestinal do pós-bariátrico — sem videochamada, no seu ritmo. Recebo sua evolução via formulário estruturado, analiso clinicamente e devolvo ajustes com a lógica clínica explicada. Ideal para quem já sabe que precisa tratar o intestino e quer suporte real sem depender de agenda fixa.</p>
+        <div class="preco-indicacao">Para o pós-bariátrico tardio com quadro intestinal que incomoda mas ainda tem estabilidade — disbiose, gases, intolerâncias, reganho gradual ou deficiências a corrigir — e que prefere um formato assíncrono com flexibilidade de rotina.</div>
         <div class="preco-inclui">
           <div class="preco-item"><span class="preco-check">✓</span><span>Plano nutricional individualizado + mensagem de voz com a lógica clínica</span></div>
           <div class="preco-item"><span class="preco-check">✓</span><span>3 checkpoints estruturados com devolutiva e ajustes</span></div>
@@ -599,11 +604,12 @@
           </div>
           <div class="preco-valor-wrap">
             <div class="preco-valor">6x de R$ 273</div>
-            <div class="preco-pix">ou R$ 1.500 à vista no Pix</div>
+            <div class="preco-ou">ou</div>
+            <div class="preco-pix">R$ 1.500 à vista no Pix</div>
           </div>
         </div>
-        <p class="preco-desc">Acompanhamento nutricional completo por 3 meses, com consultas por videochamada, checkpoints mensais, suporte por WhatsApp e ajustes contínuos conforme evolução clínica — incluindo a saúde intestinal, que costuma ser o fator mais negligenciado no pós-bariátrico tardio.</p>
-        <div class="preco-indicacao">Indicado para quem está no pós-bariátrico tardio com reganho de peso, sintomas intestinais persistentes, quadro metabólico complexo (resistência insulínica, disbiose, deficiências nutricionais, alterações hormonais) ou já tentou seguir orientações sozinha sem resultado consistente.</div>
+        <p class="preco-desc">Três meses de acompanhamento clínico completo — com consultas por videochamada, suporte via WhatsApp e ajustes contínuos. O foco é restaurar a saúde intestinal comprometida pela cirurgia: modulamos microbiota, tratamos permeabilidade intestinal, corrigimos deficiências acumuladas e trabalhamos o metabolismo e a composição corporal de forma integrada.</p>
+        <div class="preco-indicacao">Indicado para quem está no pós-bariátrico tardio com reganho, intestino que nunca ficou bem após a cirurgia, disbiose instalada, deficiências a tratar ou quadro metabólico complexo — e quer presença clínica real, não apenas um plano para seguir sozinha.</div>
         <div class="preco-inclui">
           <div class="preco-item"><span class="preco-check">✓</span><span>Consulta inicial + 2 retornos por videochamada</span></div>
           <div class="preco-item"><span class="preco-check">✓</span><span>Plano + checkpoints mensais + ajustes conforme evolução</span></div>
@@ -666,11 +672,12 @@
           </div>
           <div class="preco-valor-wrap">
             <div class="preco-valor">10x de R$ 293</div>
-            <div class="preco-pix">ou R$ 2.600 à vista no Pix</div>
+            <div class="preco-ou">ou</div>
+            <div class="preco-pix">R$ 2.600 à vista no Pix</div>
           </div>
         </div>
-        <p class="preco-desc">Acompanhamento nutricional completo por 6 meses — o tempo clinicamente necessário para mudanças metabólicas reais no pós-bariátrico tardio. Aqui trabalhamos o quadro inteiro: composição corporal, microbiota intestinal, deficiências nutricionais acumuladas e o metabolismo que foi se reorganizando após a cirurgia. Com retornos mensais por videochamada, checkpoints estruturados, suporte por WhatsApp e ajustes contínuos ao longo de cada fase.</p>
-        <div class="preco-indicacao">Indicado para quem tem histórico de tentativas sem resultado consistente, quadro metabólico ou intestinal complexo que exige acompanhamento prolongado, ou quer construir autonomia real — não apenas seguir um plano.</div>
+        <p class="preco-desc">Seis meses de acompanhamento clínico com foco progressivo na restauração da saúde intestinal e metabólica do pós-bariátrico tardio. É o tempo necessário para reorganizar a microbiota de forma consistente, corrigir deficiências acumuladas ao longo dos anos pós-cirurgia, tratar permeabilidade intestinal e estabilizar composição corporal e metabolismo. Inclui consultas mensais por videochamada, suporte via WhatsApp e ajuste contínuo do protocolo em cada fase.</p>
+        <div class="preco-indicacao">Indicado para quem está no pós-bariátrico tardio com histórico longo de tentativas sem resultado, intestino que nunca se recuperou bem após a cirurgia, quadro metabólico complexo — reganho, resistência insulínica, disbiose crônica — ou que quer construir autonomia real sobre o próprio corpo, não apenas seguir mais um plano.</div>
         <div class="preco-inclui">
           <div class="preco-item"><span class="preco-check">✓</span><span>Consulta inicial + retornos mensais por videochamada</span></div>
           <div class="preco-item"><span class="preco-check">✓</span><span>Checkpoints estruturados + avaliação comparativa início × final</span></div>
@@ -866,7 +873,7 @@
     <a href="https://tiktok.com/@nutri.lugaldino" target="_blank">TikTok</a>
     <a href="index.html">← Voltar ao site</a>
   </div>
-  <div class="footer-copy">© 2025 Luciana Galdino · Atendimento exclusivamente online</div>
+  <div class="footer-copy">© 2026 Luciana Galdino · Atendimento exclusivamente online</div>
 </footer>
 
 <script>
@@ -1000,19 +1007,20 @@
       });
       if (resp.ok) {
         document.getElementById('pagina2').style.display = 'none';
-        document.getElementById('confirmacao').style.display = 'block';
-        const nome = document.getElementById('p1_nome').value.split(' ')[0];
-        document.getElementById('nomeConfirm').textContent = nome || '';
+        const conf = document.getElementById('confirmacao');
+        conf.style.display = 'block';
+        document.getElementById('nomeConfirm').textContent = document.getElementById('p1_nome').value.split(' ')[0];
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        btn.textContent = 'Erro ao enviar. Tente novamente.';
+        btn.textContent = 'Erro ao enviar — tente novamente';
         btn.disabled = false;
       }
-    } catch {
-      btn.textContent = 'Erro ao enviar. Tente novamente.';
+    } catch(err) {
+      btn.textContent = 'Erro ao enviar — tente novamente';
       btn.disabled = false;
     }
   });
 </script>
+
 </body>
 </html>
